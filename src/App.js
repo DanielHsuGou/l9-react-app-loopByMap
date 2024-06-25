@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from "./components/Navbar";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 function App() {
 
+  // logic
   const user = {
     name: "DDD",
     age: 18,
@@ -27,10 +30,18 @@ function App() {
             ? ", you can drink!"
             : `, sorry you are not allowed to be here!`)}
       </h3>
-      {/* key = id in html */}
-      {fruitArray.map((e,i) => {
-        return <div key={i} onClick={() => handleOnClick(e)}>{e}</div>
-      })} 
+      <Calendar value={"2024-06-24"} />
+      {/* key = id in html (should be on top)*/}
+      {fruitArray.map((e, i) => {
+        // condition (logic)
+        if (e !== "a") {
+          return (
+            <div key={i} onClick={() => handleOnClick(e)}>
+              {e}
+            </div>
+          );
+        }
+      })}
     </div>
   );
 }

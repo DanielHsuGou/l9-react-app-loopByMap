@@ -19,3 +19,7 @@ a {
     text-decoration: none; /* Remove underline */
     color: inherit; /* Reset color to the inherited value */
 }
+
+a:hover {
+    color: gray;
+}
